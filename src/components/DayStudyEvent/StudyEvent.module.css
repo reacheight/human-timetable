@@ -1,23 +1,40 @@
 .event {
     list-style: none;
     display: block;
-    padding-bottom: 5px;
+    padding: 5px 5px;
+    background-color: rgba(173, 216, 230, 0.31);
+    margin-bottom: 10px;
+    border-radius: 6px;
 }
 
+.event:nth-child(odd) { background: rgba(255, 182, 193, 0.25); }
+
 .header {
-    display: inline-block;
+    display: block;
     font-weight: 600;
     font-size: 17px;
     line-height: 25px;
-    margin-bottom: 0;
-    margin-top: 6px;
+    margin: 0 0;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .info {
+    font-weight: 300;
     font-size: 16px;
     line-height: 22px;
     color: #808080;
     display: block;
+}
+
+.time {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 22px;
+    color: gray;
+}
+
+.icon {
+    display: inline-block;
 }

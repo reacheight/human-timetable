@@ -1,6 +1,6 @@
 .day {
     background: #f8f8f8;
-    padding: 20px 20px;
+    padding: 10px 20px;
     border-radius: 6px;
     list-style: none;
     display: block;
@@ -8,12 +8,13 @@
 }
 
 .header {
+    display: block;
     font-size: 18px;
     line-height: 22px;
     color: #808080;
 }
 
 .list {
-    padding-top: 2px;
+    padding-top: 12px;
     padding-left: 0;
 }

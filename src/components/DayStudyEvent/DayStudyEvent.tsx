@@ -11,18 +11,20 @@ interface Props {
 export class DayStudyEvent extends React.Component<Props> {
     render() {
         let event = this.props.event;
-        let infoOutput : string[] = [event.TimeIntervalString, ...this.getEducatorsNames()]
         let {subject, iconType} = this.getSubjectAndIconType()
 
         return (
             <li className={styles.event}>
-                <h3 className={styles.header}>{subject ?? event.Subject}</h3>
+                <span className={styles.time}>{event.TimeIntervalString}</span>
                 {iconType != null &&
                 <>
-                    <span> </span>
-                    <Icon iconType={iconType} />
+                    {' '}
+                    <div className={styles.icon}>
+                        <Icon iconType={iconType} />
+                    </div>
                 </>}
-                <span className={styles.info}>{infoOutput.join(' • ')}</span>
+                <h3 className={styles.header}>{subject ?? event.Subject}</h3>
+                <span className={styles.info}>{this.getEducatorsNames().join(' • ')}</span>
             </li>
         );
     }
@@ -44,6 +46,7 @@ export class DayStudyEvent extends React.Component<Props> {
 
             case 'семинар':
             case 'практическое занятие':
+            case 'сам. работа в присутствии преподавателя':
                 return {subject: subject, iconType: IconType.Practice};
 
             default:
